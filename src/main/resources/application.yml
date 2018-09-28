@@ -1,0 +1,51 @@
+server:
+  port: ${server.port}
+  compression:
+    enabled: true
+    mime-types: text/html,text/css,text/plain,application/javascript,application/json
+spring:
+  profiles: cloud
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: ${attachment.db.url}
+    username: ${attachment.db.user}
+    password: ${attachment.db.pwd}
+security:
+  oauth2:
+    client:
+      clientId: ${security.oauth2.client.clientid}
+      clientSecret: ${security.oauth2.client.clientsecret}
+      scope: ${security.oauth2.client.scope}
+      checkTokenUrl: ${security.oauth2.client.checktokenurl}
+      accessTokenUri: ${security.oauth2.client.accesstokenuri}
+      userAuthorizationUri: ${security.oauth2.client.userauthorizationuri}
+      logout: https://open-uaa.eu-gb.mybluemix.net/logout.do
+    resource:
+      userInfoUri: ${security.oauth2.resource.userinfouri}
+      tokenInfoUri: ${security.oauth2.resource.tokeninfouri}
+      preferTokenInfo: ${security.oauth2.resource.prefertokeninfo}
+logging:
+  level:
+    org.springframework.security: ${logging.level}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.open-discovery-service.credentials.uri:https://open-discovery.eu-gb.mybluemix.net/eureka/}
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+catalog:
+  client:
+    uri: ${vcap.services.catalog-management-service.credentials.uri:https://catalog-management.eu-gb.mybluemix.net/}
+customer:
+  client:
+    uri: ${vcap.services.customer-mgt-service.credentials.uri:https://customer-mgt.eu-gb.mybluemix.net/}
+land:
+  client:
+    uri: ${vcap.services.land-mgt-service.credentials.uri:https://land-mgt.eu-gb.mybluemix.net/}
+purchaser:
+  client:
+    uri: ${vcap.services.purchaser-mgt-service.credentials.uri:https://purchaser-mgt.eu-gb.mybluemix.net/}

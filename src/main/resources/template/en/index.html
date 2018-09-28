@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Votre description ici">
+    <title>PrimPromo Digital Suite</title>
+    <link rel="icon" type="image/png" href="/img/icon-p-primpromo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.4.2/ol.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.4.2/ol.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link rel="stylesheet" href="/vendors/swiper/swiper.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/tooltipster/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-91577211-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        var webleads_site_ids = webleads_site_ids || [];
+        webleads_site_ids.push(101069794);
+        (function () {
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://stats.webleads-tracker.com/js" :
+                "http://stats.webleads-tracker.com/js");
+            (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        <p>
+            <img alt="webleads-tracker" width="1" height="1" src="//stats.webleads-tracker.com/101069794ns.gif" />
+        </p>
+    </noscript>
+    <script async defer src="//get.smart-data-systems.com/track?site_id=101069794"></script>
+
+</head>
+
+<body>
+    <header>
+        <div id="header-top-bar">
+            <div id="search">
+                <div id="geocoder-control">
+                    <div id="search-tabs">
+                        <div id="search-tab-selected" data-target="search-address-input">
+                            <i id="geo-search-icon" class="fa fa-search"></i>
+                            <span id="search-tab-selected-text">ADRESSE</span>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul id="search-tabs-list">
+                            <li id="search-tab-address" data-target="search-address-input" class="search-tab-active">ADRESSE</li>
+                            <li id="search-tab-project" data-target="search-project-input">PROJET</li>
+                        </ul>
+                    </div>
+                    <div id="geocoder-container">
+                        <div id="geocoder-input-container">
+                            <input type="text" id="search-address-input" autocomplete="off" placeholder="Rechercher par code postal, ville ou adresse...">
+                            <input type="text" id="search-project-input" placeholder="Rechercher par nom de projet...">
+                            <a id="geocoder-reset">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <ul id="geocoder-result"></ul>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-topbar">
+                <ul id="js-nav">
+                    <li>
+                        <a id="nav-pricing-model-link">Nos offres</a>
+                    </li>
+                    <li>
+                        <a id="nav-config-users-link" title="configurer mes utilisateurs"></a>
+                    </li>
+                    <li id="nav-profile">
+                        <div>
+                            <span id="nav-profile-icon">
+                                <div id="nav-profile-notif">
+                                    <span id="nav-profile-notif-value"></span>
+                                </div>
+                            </span>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul id="nav-profile-list">
+                            <li id="nav-profil-link">
+                                <a href="#">Profil</a>
+                            </li>
+                            <li id="nav-dashboard-link">
+                                <a href="#">Tableau de bord</a>
+                            </li>
+                            <li id="nav-quotation-link" class="nav-profile-link-notif">
+                                <a href="#">Offres</a>
+                            </li>
+                            <!-- <li id="nav-users-link">
+                                <a href="#">Mes utilisateurs</a>
+                            </li> -->
+                            <li id="nav-signout-link">
+                                <a href="/logout">D&eacute;connexion</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="search-filters">
+            <div id="search-filter-source" class="search-filter">
+                <div>
+                    <i id="search-filter-source-icon" class="fa fa-circle-o search-filter-icon" aria-hidden="true"></i>
+                    <span id="search-filter-source-span">Source</span>
+                    <i class="fa fa-chevron-down search-filter-chevron" aria-hidden="true"></i>
+                </div>
+                <ul id="search-filter-source-list">
+                    <li id="search-filter-source-ds" data-option="hipi">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #4db5bb"></i>
+                        <span>Digital Suite</span>
+                    </li>
+                    <li id="search-filter-source-ppm" data-option="primpromo">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: coral"></i>
+                        <span>Primpromo</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="search-filter-status" class="search-filter">
+                <div>
+                    <i id="search-filter-status-icon" class="fa fa-circle-o search-filter-icon" aria-hidden="true"></i>
+                    <span id="search-filter-status-span" data-selected="all">Statut</span>
+                    <i class="fa fa-chevron-down search-filter-chevron" aria-hidden="true"></i>
+                </div>
+                <ul id="search-filter-status-list">
+                    <li id="search-filter-status-all" data-option="all">
+                        <i class="fa fa-asterisk" aria-hidden="true" style="color: #849296"></i>
+                        <span>Tous statuts</span>
+                    </li>
+                    <li id="search-filter-status-ongoing" data-option="ongoing">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #11a0b9"></i>
+                        <span>En cours</span>
+                    </li>
+                    <li id="search-filter-status-over" data-option="completed">
+                        <i class="fa fa-circle" aria-hidden="true" style="color: #C42960"></i>
+                        <span>Terminé</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="search-filter-owner" class="search-filter">
+                <div>
+                    <i id="search-filter-owner-icon" class="fa fa-user-o search-filter-icon" aria-hidden="true"></i>
+                    <input id="search-filter-owner-input" type="email" placeholder="Auteur">
+                    <i class="fa fa-chevron-down search-filter-chevron" aria-hidden="true"></i>
+                </div>
+                <ul id="search-filter-owner-list">
+                </ul>
+            </div>
+            <div id="search-clear-filters">Réinitialiser les filtres</div>
+        </div>
+    </header>
+
+    <main id="workspace">
+        <div id="catalog-container">
+            <section id="solutions" class="solutions">
+                <div id="solutions-items-block" class="swiper-container">
+                    <div id="box-slider" class="swiper-wrapper"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+                <div class="swiper-button-next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <div id="cart">
+                    <div id="back-catalog">
+                        <a href="#">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>Retour au catalogue</a>
+                    </div>
+                    <div id="detail-calc" class="catalog-container">
+                        <div>
+                            <div>
+                                <img src="" alt="">
+                                <h1>la calculatrice budgétaire</h1>
+                                <div class="line"> </div>
+                                <p>Contactez-nous pour vous abonner à ce service. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-open">
+                    <div id="contact-open-container">
+                        <div>
+                            <h2>Contactez-nous</h2>
+                            <form name="myForm" method="post">
+                                <div class="form">
+                                    <div class="form-item">
+                                        <label>Commande *</label>
+                                        <div class="form-input two-columns-form-item">
+                                            <div class="material-design-group">
+                                                <input type="text" id="contact-product" name="contact-product" class="material-design-input" disabled/>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar contact-command-users-bar"></span>
+                                            </div>
+                                            <div class="material-design-group">
+                                                <input type="number" id="contact-nb-users" name="contact-users" class="material-design-input" placeholder="Nombre d'utilisateurs"
+                                                    required/>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar contact-command-users-bar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label>Je suis *</label>
+                                        <div class="form-input two-columns-form-item">
+                                            <div class="material-design-group">
+                                                <input type="text" id="contact-first-name" name="contact-first-name" class="material-design-input" required/>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="contact-first-name">Prénom</label>
+                                            </div>
+                                            <div class="material-design-group">
+                                                <input type="text" id="contact-last-name" name="contact-last-name" class="material-design-input" required/>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="contact-first-name">Nom</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label>De la société *</label>
+                                        <div class="form-input">
+                                            <div class="material-design-group">
+                                                <input type="text" id="contact-company" name="contact-company" class="material-disabled material-design-input" readonly="readonly"
+                                                />
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="contact-company">Mon entreprise</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label>Fonction *</label>
+                                        <div class="form-input">
+                                            <div class="material-design-group">
+                                                <input type="text" id="contact-function" name="contact-function" class="material-design-input" required/>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="contact-function">Mon rôle dans l'entreprise</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label>Merci de me recontacter par *</label>
+                                        <div class="form-input two-columns-form-item">
+                                            <div class="material-design-group">
+                                                <input type="email" id="contact-email" name="contact-email" class="material-disabled material-design-input" required readonly="readonly"
+                                                />
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="contact-email">E-Mail</label>
+                                            </div>
+                                            <div class="material-design-group">
+                                                <input type="tel" id="contact-phone" name="contact-phone" class="material-design-input" required/>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="contact-phone">Téléphone</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item one-column-form-item message-block">
+                                        <label>Message *</label>
+                                        <div class="form-input">
+                                            <div class="material-design-group">
+                                                <textarea id="contact-comment" name="contact-comment" placeholder="Bonjour, j'aimerais souscrire a une solution Primpromo Digital Suite."
+                                                    class="material-design-input"></textarea>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <input type="checkbox" id="contact-cgu" required value="contact-cgu-checked">
+                                        <label id="label-contact-cgu" for="contact-cgu"> J'accepte les conditions générales d'utilisation.</label>
+                                        <button id="submit-contact" type="submit" class="btn btn-big-action-service contact-btn-item contact-form-submit">
+                                            <img src="../../img/icon-send.png" alt="envoyer">Envoyer</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="dashboard" class="dashboard-wrapper">
+            <div id="dashboard-panel"> 
+            <nav id="dashboard-nav">
+                <ul>
+                    <li><span id="dashboard-indicator-link"><i class="fa fa-tachometer" aria-hidden="true"></i>Tableau de bord</span></li>
+                    <!-- <li><span id="dashboard-upgrade-subscription-link"><i class="fa fa-sliders" aria-hidden="true"></i>Mon abonnement</span></li> -->
+                </ul>
+                <button id="close-dashboard" alt="Fermer le tableau de bord"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </nav>  
+            <div id="dashboard-indicators-content">
+            <div id="dashboard-panel-header">
+                <p id="program-name"></p>
+                <button id="button-upgrade">Changer de formule</button>
+            </div>
+            <div id="dashboard-panel-projects">
+            <div class="dashboard-panel-block" id="dashboard-panel-active-program">
+                    <div class="dashboard-panel-block-content">
+                    <div class="dpanel-blockheader">
+                        <div class="dpanel-blockheader-img">
+                            <img src="/img/home-white.png">
+                        </div>
+                        <div class="dpanel-blockheader-text">
+                            <p class="dpanel-block-title">Programmes actifs</p>
+                            <p class="dpanel-block-price" id="active-program-price"></p>
+                        </div>
+                    </div>
+                    <p class="dpanel-block-value"></p>
+                    <p class="dpanel-block-bottom">soit <span id="active-program-subtotal"></span> par mois</p>
+                    </div>
+                </div>
+                <div class="dashboard-panel-block" id="dashboard-panel-archived-program">
+                    <div id="overlay-archived-program">
+                        <p><i class="fa fa-info-circle" aria-hidden="true"></i><br>L'archivage des programmes est disponible <br>à partir de la formule standard</p>
+                    </div>
+                <div id="dashboard-panel-overflow">
+                    <div id="archived-program-content" class="dashboard-panel-block-content">
+                    <div class="dpanel-blockheader">
+                        <div class="dpanel-blockheader-img">
+                            <img src="/img/home-white.png">
+                        </div>
+                        <div class="dpanel-blockheader-text">
+                            <p class="dpanel-block-title">Programmes archivés</p>
+                            <p class="dpanel-block-price" id="archived-program-price"></p>
+                        </div>
+                    </div>
+                    <p class="dpanel-block-value"></p>
+                    <p class="dpanel-block-bottom">soit <span id="archived-program-subtotal"></span> par mois</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="dashboard-separator">
+                <span>+</span>
+            </div>
+            <div id="dashboard-panel-users">
+            <div class="dashboard-panel-block">
+                    <div class="dashboard-panel-block-content">
+                    <div class="dpanel-blockheader">
+                        <div class="dpanel-blockheader-img">
+                            <img src="/img/dashboard-user.png">
+                        </div>
+                        <div class="dpanel-blockheader-text">
+                            <p class="dpanel-block-title">Nombre d'utilisateurs</p>
+                            <p class="dpanel-block-price" id="licensed-price"></p>
+                        </div>
+                    </div>
+                    <p class="dpanel-block-value" id="licensed-quantity"></p>
+                    <p class="dpanel-block-bottom">soit <span id ="licensed-subtotal">€</span> par mois</p>
+                    </div>
+                </div>
+        </div>
+                    <div id="dashboard-total-price">
+                        <p>Total HT :
+                            <span id="total-price"></span>
+                        </p>
+                    </div>
+                </div>
+                <div id="dashboard-upgrade-subscription-content">
+                    <div id="dashboard-pricing-wrapper">
+                        <p><span class="dashboard-index dashboard-color">1 . </span>Ma formule</p>
+                        <div class="dashboard-users-content">
+                            <div >
+                                <span id="dashboard-pricing-users-span">Modifier le nombre d'utilisateurs</span>
+                                <input id="update-licence-quantity-input" type="number" min="1" value="1">
+                                <a id="btn-license-quantity"  class="btn-next update-licence-quantity-btn"> valider</a>
+                            </div>
+                            <div id="upgrade-subscription-pricing-products"></div>
+                        </div>
+                        
+                    </div>
+                    <div id="dashboard-users-wrapper">
+                        <p><span class="dashboard-index dashboard-color">2 . </span>Mes <span id="upgrade-subscription-users-count" class="dashboard-index dashboard-color"></span> utilisateur(s)</p>
+                        <!-- <div>
+                            <span id="pricing-users-span">Ajouter un utilisateur</span>
+                            <input id="dashboard-users-input" type="number" min="1" value="1">
+                            <a id="add-dashboard-user"> + Ajouter un utilisateur</a>
+                        </div> -->
+                        <div  class="dashboard-users-content">
+                            <div id="dashboard-users-list-container" class="dashboard-users-list-container"></div>
+                            <div id="dashboard-users-subscription-btn-block">
+                                <div id="send-new-member-list-subscription-btn" class="btn-next send-new-member-list-subscription-btn" title="Validez les modifications de votre liste utilisateurs">
+                                    <a > Valider
+                                        <i class="fa fa-angle-right btn-next-arrow" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="profil" class="profil-wrapper">
+            <div>
+                <div id="profil-panel">
+                    <div class="profil white-bg">
+                        <div class="main-wsp-content">
+                            <div id="profil-progress" class="profil-section">
+                                <p id="profil-rate"></p>
+                                <progress id="profil-progress-bar" max="100" value=""></progress>
+                            </div>
+                            <form action="" method="post">
+                                <section class="identity-details">
+                                    <h2>Je suis</h2>
+                                    <div class="profil-section">
+                                        <div class="picture-name">
+                                            <div id="picture" class="picture">
+                                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                            </div>
+                                            <p id="profil-username"></p>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <div class="label-input-profil-block">
+                                                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                    <div class="material-design-group">
+                                                        <input type="text" name="profil-first-name" id="profil-first-name" class="material-design-input" required/>
+                                                        <span class="material-design-highlight"></span>
+                                                        <span class="material-design-bar"></span>
+                                                        <label class="material-design-label" for="profil-first-name">Prénom</label>
+                                                    </div>
+                                                </div>
+                                                <div class="label-input-profil-block">
+                                                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                    <div class="material-design-group">
+                                                        <input type="text" name="profil-last-name" id="profil-last-name" class="material-design-input" required/>
+                                                        <span class="material-design-highlight"></span>
+                                                        <span class="material-design-bar"></span>
+                                                        <label class="material-design-label" for="profil-last-name">Nom</label>
+                                                    </div>
+                                                </div>
+                                                <div class="label-input-profil-block">
+                                                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                                                    <div class="material-design-group">
+                                                        <input type="text" name="profil-company" id="profil-company" class="material-disabled material-design-input" readonly="readonly"
+                                                        />
+                                                        <span class="material-design-highlight"></span>
+                                                        <span class="material-design-bar"></span>
+                                                        <label class="material-design-label" for="profil-company">Entreprise</label>
+                                                    </div>
+                                                </div>
+                                                <div class="label-input-profil-block">
+                                                    <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                                                    <div class="material-design-group">
+                                                        <input type="text" name="profil-function" id="profil-function" class="material-design-input" required/>
+                                                        <span class="material-design-highlight"></span>
+                                                        <span class="material-design-bar"></span>
+                                                        <label class="material-design-label">Fonction</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="contact-details">
+                                    <h2>Mes coordonnées</h2>
+                                    <div class="profil-section">
+                                        <div class="label-input-profil-block">
+                                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                            <div class="material-design-group">
+                                                <input type="email" name="profil-email" id="profil-email" class="material-disabled material-design-input" required readonly="readonly"
+                                                />
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="profil-email">E-mail</label>
+                                            </div>
+                                        </div>
+                                        <div class="label-input-profil-block">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <div class="material-design-group">
+                                                <input type="tel" name="profil-phone" id="profil-phone" class="material-design-input" required/>
+                                                <span class="material-design-highlight"></span>
+                                                <span class="material-design-bar"></span>
+                                                <label class="material-design-label" for="profil-phone">Téléphone</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="other-details">
+                                    <h2>Mes autres informations</h2>
+                                    <div class="profil-section">
+                                        <div class="other-details-item">
+                                            <p>
+                                                <i class="fa fa-language" aria-hidden="true"></i>Langue</p>
+                                            <span>
+                                                <label for="french-language">
+                                                    <img src="../../img/icon-fr.png" alt="french">
+                                                </label>
+                                                <input type="radio" name="language" value="fr" id="french-language">
+                                                <label for="english-language">
+                                                    <img src="../../img/icon-en.png" alt="english">
+                                                </label>
+                                                <input type="radio" name="language" value="en" id="english-language">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </section>
+                                <div class="register-button">
+                                    <button id="submit-profile" type="submit" class="btn btn-save">Enregistrer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <aside>
+                        <div class="aside-container">
+                            <div>
+                                <section id="profil-notification" class="aside-section">
+                                    <h2>mes notifications</h2>
+                                    <p></p>
+                                </section>
+                                <section id="profil-activity" class="aside-section">
+                                    <h2>mes activités</h2>
+                                    <p></p>
+                                    <div class="date-activity">
+                                        <div class="activity-items">
+                                            <p></p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section id="profil-team" class="aside-section">
+                                    <h2>mon équipe</h2>
+                                </section>
+                            </div>
+                            <nav class="aside-nav">
+                                <ul>
+                                    <li>
+                                        <a data-target="profil-notification">
+                                            <i class="fa fa-bell" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-target="profil-activity">
+                                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-target="profil-team">
+                                            <i class="fa fa-users" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <div id="full-overlay" class="full-overlay"></div>
+        <div id="tuto-overlay">
+            <div id="first-tuto-overlay">
+                <div id="coach-image-create">
+                    <img src="/img/create-new-project.png">
+                </div>
+                <div id="coach-image-search">
+                    <img src="/img/search-wthbar-onboard.png">
+                </div>
+                <div id="coach-image-clic-map">
+                    <img src="/img/clicmap-onboard.png">
+                </div>
+            </div>
+            <div id="second-tuto-overlay">
+                <div id="coach-image-access-menu">
+                    <img src="/img/access-menu-project.png">
+                </div>
+                <div id="coach-image-info-project">
+                    <img src="/img/infoprojet-onboard.png">
+                </div>
+                <div id="coach-image-clic-service">
+                    <img src="/img/clicservice-onboard.png">
+                </div>
+            </div>
+            <div id="third-tuto-overlay">
+                <div id="coach-image-select-project">
+                    <img src="/img/select-project-onboard.png">
+                </div>
+                <div id="coach-image-clic-select-project">
+                    <img src="/img/clic-select-project-onboard.png">
+                </div>
+            </div>
+            <div id="tuto-overlay-command">
+                <div id="coach-image-next">
+                    <img src="/img/next-onboard.png">
+                </div>
+                <div id="coach-image-close">
+                    <img src="/img/close-onboard.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU PROJET -->
+        <section class="menu-projets" id="menu-projets">
+            <!-- Menu sidebar with icones -->
+            <div id="menu-projets-side" class="hover-zone">
+                <ul>
+                    <li id="logo-menu-projets">
+                        <a href="#">
+                            <img src="/img/icon-p-primpromo.png" class="menu-img-left-aside">
+                        </a>
+                    </li>
+                    <li class="menu-projets-item">
+                        <a href="#">
+                            <i class="fa fa-map" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li title="Mon projet" class="menu-projets-item menu-bar-trigger menu-projets-item-active tooltip" id="my-project" data-target="menu-bar-project"
+                        data-text="Mon projet">
+                        <a href="#">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li title="Mes documents" class="menu-projets-item menu-bar-trigger tooltip" id="download" data-target="menu-bar-download"
+                        data-text="Mes documents">
+                        <a href="#">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li title="Mes partages" class="menu-projets-item menu-bar-trigger tooltip" id="share" data-target="menu-bar-share" data-text="Mes partages">
+                        <a href="#">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Part of the menu that opens when an icon is clicked -->
+            <div class="menu-bar" id="menu-bar">
+                <div class="extensible-logo-title">
+                    <p>
+                        <b>PRIMPROMO</b> Digital Suite</p>
+                </div>
+                <div id="menu-bar-title">
+                    <h3>
+                        <span id="menu-land-name-title">Mon projet</span>
+                    </h3>
+                    <i class="fa fa-lock lock tooltip-lock" id="menu-bar-project-lock" aria-hidden="true"></i>
+                </div>
+                <!-- Content of the menu-bar menu -->
+                <div class="menu-bar-content" id="menu-bar-project">
+                    <div class="menu-bar-project-container">
+                        <div>
+                            <div class="menu-bar-project-container-info">
+                                <div class="material-design-group" id="menu-input-group-name">
+                                    <input id="menu-land-name" type="text" name="menu-land-name" class="material-design-input" required/>
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label" for="menu-land-name">Projet</label>
+                                    <span class="menu-land-warning-text" id="menu-land-warning-title">Veuillez renseigner le nom du projet</span>
+                                </div>
+                                <div class="material-design-group" id="menu-input-group-address">
+                                    <input id="menu-land-address" type="text" name="menu-land-address" class="material-disabled material-design-input" readonly="readonly">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label" for="menu-land-address">Adresse</label>
+                                </div>
+                                <div class="material-design-group" id="menu-input-group-name">
+                                    <input id="menu-land-area" type="text" name="menu-land-area" class="material-design-input" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label" for="menu-land-area">Superficie</label>
+                                    <span class="menu-land-warning-text" id="menu-land-warning-title">Veuillez renseigner la superficie du projet</span>
+                                </div>
+                                <div class="material-design-group" id="menu-land-group-status">
+                                    <label for="menu-land-status">Statut</label>
+                                    <select name="menu-land-status" id="menu-land-status">
+                                        <option value="ONGOING">En cours</option>
+                                        <option value="COMPLETED">Terminé</option>
+                                        <option value="CANCELED">Abandonné</option>
+                                        <option value="ARCHIVED" style="display : none">Archivé</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <span class="menu-land-warning-text" id="menu-land-warning-submit">Veuillez compléter les informations manquantes</span>
+                            <button id="menu-land-submit" class="contextual-menu-save-button btn btn-save">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>Enregistrer le projet
+                            </button>
+                            <button id="menu-land-delete" class="contextual-menu-delete-button btn btn-delete">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>Supprimer le projet
+                            </button>
+                        </div>
+                        <div class="menu-bar-project-footer">
+                            <p>Retrouvez les services associés au projet</p>
+                            <a href="#" id="more-services">Voir les services →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-bar-content" id="menu-bar-download">
+                    <ul id="sidebar-file"></ul>
+                </div>
+                <div id="menu-bar-share" class="menu-bar-content">
+                    <div id="list-shared-users">
+                        <div id="search-container">
+                            <div id="search-input-container">
+                                <i id="user-search-icon" class="fa fa-search"></i>
+                                <input type="text" id="search-user-input" placeholder="Rechercher un utilisateur">
+
+                            </div>
+                        </div>
+                        <ul id="user-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="map-section">
+            <div id="map" class="map"></div>
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div class="popup-header">
+                    <h2 id="project-name"></h2>
+                </div>
+                <div id="popup-content">
+                    <div id="swipe-left" class="swiper">
+                        <i id="chevron-swipe-left" class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="building-picture">
+                        <img src="/img/building-img.png">
+                    </div>
+                    <div class="project-data">
+                        <span id="project-address-container">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <h2 id="project-address"></h2>
+                        </span>
+                        <span id="project-owner-container">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <h2 id="project-owner"></h2>
+                        </span>
+                    </div>
+                    <div id="swipe-right" class="swiper">
+                        <i id="chevron-swipe-right" class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div id="popup-footer"></div>
+            </div>
+			<div id="popup-question" class="ol-popup">
+                <div id="popup-content-question">
+                    <p>Voulez-vous créer un nouveau projet ici ?</p>
+                    <div>
+                        <a href="#" id="popup-validate-question">
+                            <i class="fa fa-check"></i>
+                        </a>
+                        <a href="#" id="popup-closer-question">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="map-progress-bar"></div>
+            <div id="menu-slider" style="transform: translateX(0px); right: -21em;">
+                <div id="menu-sidebar">
+                    <p>
+                        <i class="fa fa-bars" aria-hidden="true"></i>services</p>
+                </div>
+                <div id="contextual-menu" class="contextual-menu sidepanel">
+                    <div id="contextual-menu-solution-list-container" class="contextual-menu-item-container">
+                        <div aria-expanded="true" id="contextual-menu-solution-list-container-title" class="contextual-menu-item-title">
+                            <h2>
+                                <span class="service-menu-content-back-button contextual-menu-title-js" id="service-menu-content-back-button"></span>
+                                <span class="contextual-menu-title contextual-menu-title-js">Mes services</span>
+                                <i class="fa fa-lock" id="contextual-menu-lock" aria-hidden="true"></i>
+                            </h2>
+                        </div>
+                        <div id="contextual-menu-solution-list-content">
+                            <div id="contextual-menu-solution-list"></div>
+                        </div>
+                    </div>
+                    <div id="service-menu-content-service-title" class="contextual-menu-item-title contextual-menu-solution-bg-color">
+                        <h2>
+                            <span id="contextual-menu-solution-icon-container">
+                                <img id="contextual-menu-solution-icon" src="" alt="">
+                            </span>
+                            <span id="contextual-menu-solution-name-title"></span>
+                        </h2>
+                    </div>
+                    <div id="service-menu-content" class="animation_container"></div>
+                </div>
+            </div>
+        </section>
+        <div id="service_div"></div>
+        <section id="welcome-form">
+            <div class="welcome-form-container">
+                <div id="welcome-form-content">
+                    <h2>Bienvenue, faisons connaissance :)</h2>
+                    <span id="welcome-form-subtitle">Comment vous appelez-vous ?</span>
+                    <form>
+                        <div class="material-design-group">
+                            <input type="text" name="welcome-first-name" id="welcome-first-name" class="material-design-input" required>
+                            <span class="material-design-highlight"></span>
+                            <span class="material-design-bar"></span>
+                            <label class="material-design-label" for="welcome-first-name">Prénom</label>
+                        </div>
+                        <div class="material-design-group">
+                            <input type="text" name="welcome-last-name" id="welcome-last-name" class="material-design-input" required>
+                            <span class="material-design-highlight"></span>
+                            <span class="material-design-bar"></span>
+                            <label class="material-design-label" for="welcome-last-name">Nom</label>
+                        </div>
+                        <span id="welcome-form-warning">* Oups, merci de renseigner votre nom et prénom</span>
+                        <div class="register-button">
+                            <button id="submit-welcome-form" type="submit" class="btn btn-save">Je valide</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="freemium-container">
+                    <li class="freemium-header">Essai gratuit</li>
+                    <ul class="freemium-content">
+                        <div class="service-title">Bilan promoteur</div>
+                        <li>Evalution de la valeur vénale du terrain
+                            <br>
+                            <span class="freemium-functionality-details">Méthodes 'compte à retours' &amp; bilan promoteur'</span>
+                        </li>
+                        <li>Modélisation des recettes
+                            <br>
+                            <span class="freemium-functionality-details">Logement (social, prix maitrisé, accession libre), commerce, bureaux...</span>
+                        </li>
+                        <li>Modélisation des dépenses
+                            <br>
+                            <span class="freemium-functionality-details">Foncier, construction, frais, commercialisation</span>
+                        </li>
+                        <li class="">Evaluation des risques d'assainissement
+                            <br>
+                            <span class="freemium-functionality-details">Dépollution, désamiantage...</span>
+                        </li>
+                        <li class="">Calcul de rendements
+                            <br>
+                            <span class="freemium-functionality-details">Sur surfaces habitables/utiles</span>
+                        </li>
+                        <div class="freemium-btn-container">
+                            <button id="try-freemium-btn" class="freemium-btn">Essai Gratuit 30 jours</button>
+                            <button id="subscribe-btn">Souscrire</button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="pricing-modal">
+            <div>
+                <div id="pricing-modal-wrapper">
+                    <div id="pricing">
+                        <h1>Découvrez les offres Primpromo Digital Suite</h1>
+                        <div id="pricing-content-wrapper">
+                            <div id="pricing-users-container">
+                                <div>
+                                    <img src="/img/group.png" id="pricing-users-icon">
+                                </div>
+                                <div id="user-number-container">
+                                    <span id="pricing-users-span">Combien d'utilisateurs ?</span>
+                                    <!-- <input id="pricing-users-input" type="number" min="1" value="1"> -->
+									<!-- <a id="btn-license-quantity-update"  class="btn-next update-licence-quantity-btn"> valider</a> -->
+                                </div>
+                            </div>
+                            <div id="pricing-products"></div>
+                        </div>
+                        <div id="pricing-security">
+                            <p>
+                                <i class="fa fa-lock"></i>Paiement s&eacute;curis&eacute;, conforme aux normes de sécurité de l’industrie des cartes
+                                de paiement (PCI DSS).</p>
+                        </div>
+                    </div>
+                    <!-- Tenant informations form -->
+                    <div id="tenant-modal">
+                        <div class="step-title">
+                            <h1>Créez votre compte entreprise</h1>
+                        </div>
+                        <form>
+                            <div>
+                                <span class="tenant-modal-cat-title">Entreprise</span>
+                                <div class="material-design-group">
+                                    <input id="tenant-name" class="material-design-input" type="text" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label id="tenant-name-label" class="material-design-label">Raison sociale / Nom </label>
+                                </div>
+                                <!--<div class="material-design-group">                                        
+                                    <input id="tenant-legal-form" class="material-design-input" type="text" required="">                                  
+                                    <span class="material-design-highlight"></span>                                  
+                                    <span class="material-design-bar"></span>                                  
+                                    <label class="material-design-label">Forme juridique</label>                                
+                                </div>-->
+                                <div class="material-design-group">
+                                    <input id="tenant-head-office" class="material-design-input" type="text" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label">Adresse</label>
+                                </div>
+                                <div class="material-design-group">
+                                    <input id="tenant-siren" class="material-design-input" type="text" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label">N°SIRET</label>
+                                </div>
+                                <!--<div class="material-design-group">                                        
+                                    <input id="tenant-capital" class="material-design-input" type="number" required="">                                  
+                                    <span class="material-design-highlight"></span>                                  
+                                    <span class="material-design-bar"></span>                                  
+                                    <label class="material-design-label">Capital (€)</label>                                
+                                </div>-->
+                                <div class="material-design-group">
+                                    <input id="*tenant-capital" class="material-design-input" type="text" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label">Pays</label>
+                                </div>
+                                <div class="material-design-group">
+                                    <input id="*tenant-capital" class="material-design-input" type="text" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label">N°TVA intracommunautaire</label>
+                                </div>
+                                <div class="material-design-group">
+                                    <input id="*tenant-capital" class="material-design-input" type="text" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label">Moyen de paiement (CB ou IBAN)</label>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="tenant-modal-cat-title">Contact</span>
+                                <div class="material-design-group">
+                                    <input id="tenant-admin-name" class="material-design-input" type="text" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label id="tenant-admin-name-label" class="material-design-label">Commercial</label>
+                                </div>
+                                <div class="material-design-group">
+                                    <input id="tenant-admin-mail" class="material-design-input" type="email" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label id="tenant-admin-mail-label" class="material-design-label">Email</label>
+                                </div>
+                                <div class="material-design-group">
+                                    <input id="tenant-phone-number" class="material-design-input" type="tel" required="">
+                                    <span class="material-design-highlight"></span>
+                                    <span class="material-design-bar"></span>
+                                    <label class="material-design-label">Téléphone</label>
+                                </div>
+                                <!--<span class="tenant-modal-cat-title">Informations internes</span>
+                                <span id="tenant-form-required-text" class="form-required">Oups... merci de compléter le formulaire client</span>-->
+                                <div id="create-tenant" class="btn-next">
+                                    <a>Paiement
+                                        <i class="fa fa-angle-right btn-next-arrow" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <form id="payment-form" class="payment-form-container">
+                        <div class="pop-up-title">
+                            <h2>PAIEMENT</h2>
+                        </div>
+                        <div class="payment-form-text">
+                            <p>Merci de renseigner vos informations bancaires afin de souscrire aux services</p>
+                        </div>
+                        <div class="form-row modal-payment-container">
+                            <div class="cell stripe-content stripe-element">
+                                <div id="card-element">
+                                    <div class="row">
+                                        <div class="field">
+                                            <div id="stripe-card-number" class="input empty"></div>
+                                            <label for="stripe-card-number" data-tid="elements_examples.form.card_number_label">Numéro de carte</label>
+                                            <div class="baseline"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row field-container">
+                                        <div class="field half-width">
+                                            <div id="stripe-card-expiry" class="input empty"></div>
+                                            <label for="stripe-card-expiry" data-tid="elements_examples.form.card_expiry_label">Date d'expiration</label>
+                                            <div class="baseline"></div>
+                                        </div>
+                                        <div class="field half-width">
+                                            <div id="stripe-card-cvc" class="input empty"></div>
+                                            <label for="stripe-card-cvc" data-tid="elements_examples.form.card_cvc_label">Code de sécurité</label>
+                                            <div class="baseline"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Used to display Element errors -->
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+                        </div>
+                        <div class="stripe-button-container">
+                            <span class="stripe-cgv"> En validant mon paiement, je déclare avoir pris connaissance et accepté sans réserves les
+                                <a href="#">conditions générales de vente.</a>
+                            </span>
+                            <button id="stripe-element-payment-button">Payer
+                                <span id="stripe-element-pricing"></span>
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Section Ajout user -->
+                    <div id="pop-up-users-panel">
+                        <div class="pop-up-users-container">
+                            <div class="pop-up-container-content">
+                                <div class="wrapper-container">
+                                    <div>
+                                        <div class="row">
+                                            <div class="pop-up-user-textinfo-container">
+                                                <h3 id="pop-up-user-subtitle">
+                                                    Configurez la liste de </span>Mes  utilisateurs
+                                                </h3>
+                                                <!-- <span id="subscription-users-count" class="dashboard-index dashboard-color"></span> -->
+                                                <div class="pop-up-user-question">
+                                                    <i class="fa fa-circle" aria-hidden="true"></i><p >Qui pourra accéder aux services ?</p>
+                                                </div>
+                                                <p class="pop-up-user-help-textinfo">
+                                                    Plus que
+                                                    <span id="number-of-users-left" class="number-of-users-left pop-up-user-color"></span> utilisateur(s) à ajouter
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div id="users-list-container-header" class="users-list-container-header pop-up-user-color">
+                                            <div></div>
+                                            <p> L'utilisateur pourra aussi</p>
+                                        </div>
+                                        <div id="users-list-container" class="users-list-container"></div>
+                                    </div>
+                                    <div class="block-btn-save-services">
+                                        <div></div>
+                                        <div id="send-subscription-configuration" class="btn-save-services">
+                                            <a>
+                                                <i class="fa fa-floppy-o" aria-hidden="true"></i>Sauvegarder</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- OVERLAY INFORMATIONS NOUVEAU PROJET -->
+
+        <section id="overlay-new-project">
+            <div id="blue-information">
+                <h2>Créez votre projet</h2>
+                <p>Remplissez tous les champs pour enregistrer votre projet</p>
+                <i class="fa fa-long-arrow-left" id="blue-information-back"></i>
+                <div id="step1-new-project" class="steps">
+                    <i class="fa fa-circle-thin"></i>
+                    <p>Créez un nouveau projet</p>
+                </div>
+                <div id="step2-new-project" class="steps">
+                    <i class="fa fa-circle-thin"></i>
+                    <p>Accédez au menu</p>
+                    <div id="hamburger-overlay">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div id="step3-new-project" class="steps">
+                    <i class="fa fa-circle-thin"></i>
+                    <p>Faites votre bilan promoteur</p>
+                    <div>
+                        <img src="../../img/icone_simulation_white.png" alt="Bilan promoteur">
+                    </div>
+                </div>
+                <div id="step4-new-project" class="steps">
+                    <i class="fa fa-circle-thin"></i>
+                    <p>Pour aller plus loin, <a href=""><strong>passez à la version Standard</strong></a></p>
+                </div>
+            </div>
+            <!-- Content of the menu-bar menu -->
+            <div class="menu-bar-content" id="menu-bar-project">
+                <div class="menu-bar-project-container">
+                    <div>
+                        <div class="menu-bar-project-container-info">
+                            <div class="material-design-group" id="menu-input-group-name">
+                                <input id="menu-land-name" type="text" name="menu-land-name" class="material-design-input" required/>
+                                <span class="material-design-highlight"></span>
+                                <span class="material-design-bar"></span>
+                                <label class="material-design-label color-label" for="menu-land-name">Projet</label>
+                                <span class="menu-land-warning-text" id="menu-land-warning-title">Veuillez renseigner le nom du projet</span>
+                            </div>
+                            <div class="material-design-group" id="menu-input-group-address">
+                                <input id="menu-land-address" type="text" name="menu-land-address" class="material-disabled material-design-input" readonly="readonly">
+                                <span class="material-design-highlight"></span>
+                                <span class="material-design-bar"></span>
+                                <label class="material-design-label color-label" for="menu-land-address">Adresse</label>
+                            </div>
+                            <div class="material-design-group" id="menu-input-group-name">
+                                <input id="menu-land-area" type="text" name="menu-land-area" class="material-design-input" required="">
+                                <span class="material-design-highlight"></span>
+                                <span class="material-design-bar"></span>
+                                <label class="material-design-label color-label" for="menu-land-area">Superficie</label>
+                                <span class="menu-land-warning-text" id="menu-land-warning-title">Veuillez renseigner la superficie du projet</span>
+                            </div>
+                            <div class="material-design-group" id="menu-land-group-status">
+                                <label for="menu-land-status" class="material-design-label color-label">Statut</label>
+                                <select name="menu-land-status" id="menu-land-status">
+                                        <option value="ONGOING">En cours</option>
+                                        <option value="COMPLETED">Terminé</option>
+                                        <option value="CANCELED">Abandonné</option>
+                                        <option value="ARCHIVED" style="display : none">Archivé</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <span class="menu-land-warning-text" id="menu-land-warning-submit">Veuillez compléter les informations manquantes</span>
+                        <button id="menu-land-submit" class="contextual-menu-save-button btn btn-save">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>Enregistrer le projet
+                        </button>
+                        <!--<button id="menu-land-delete" class="contextual-menu-delete-button btn btn-delete">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>Supprimer le projet
+                        </button>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+		<div id="purchaser-ui">
+            <div id="purchaser-close-button"></div>
+			<div>
+				<div class="purchaser-ui-dialog-title">
+					<h3 id="purchaser-ui-dialog-title">Mes acquéreurs </h3>
+				</div>
+			</div>
+
+			<div id="purchaser-ui-dialog-main-container">
+				<div class="purchaser-ui-dialog-top-container">
+					<div id="purchaser-ui-dialog-search-container">
+						<div id="purchaser-ui-dialog-search-input-container">
+							<input type="text" id="purchaser-ui-dialog-search-input" autocomplete="off" placeholder="Rechercher un acquéreur, une société...">
+							<a id="purchaser-ui-dialog-search-reset">
+								<i class="fa fa-times" aria-hidden="true"></i>
+							</a>
+						</div>
+						<ul id="purchaser-ui-dialog-search-result"></ul>
+					</div>	
+					<button class="btn btn-add-purchaser" id="add-purchaser-button-people"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i><span>Créer un acquéreur</span></button>				
+					<button class="btn btn-add-tenant" id="add-purchaser-button-tenant"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i><span>Créer une société</span></button>				
+				</div>
+				<div id="purchaser-ui-dialog-list-wrapper" class="purchaser-ui-dialog-list-container">
+					<div class="purchaser-ui-dialog-list">
+						<div class="purchaser-ui-dialog-list-content">
+							<i class="fa fa-user fa-2x"></i>
+							<h3>Matthieu</h3>
+							<h3>Martin</h3>
+						</div>
+						<div class="purchaser-ui-dialog-list-overlay">
+							<div class="btn-wrapper-overlay btn-wrapper-overlay-validate"><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Valider</a></div>
+							<div class="btn-wrapper-overlay btn-wrapper-overlay-edit"><a href="#"><i class="fa fa-edit" aria-hidden="true"></i>Modifier</a></div>
+						</div>
+					</div>     
+				</div>
+			</div>
+        	<div class="purchaser-form-people" style="display: none;">
+				<div id="purchaser-form-header">
+				<p id="purchaser-form-title">Ajouter un acquéreur</p>
+				<button id="button-update"><i class="fa fa-wrench" aria-hidden="true"></i> Modifier</button>
+				<button id="button-delete"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+            </div>
+			 <form>
+				<div class="material-design-group">
+					<input id="purchaser-lastname" class="material-design-input" type="text" required="">
+					<span class="material-design-highlight"></span>
+					<span class="material-design-bar"></span>
+					<label id="purchaser-name-label" class="material-design-label">Nom</label>
+				</div>
+				<div class="material-design-group">
+					<input id="purchaser-firstname" class="material-design-input" type="text" required="">
+					<span class="material-design-highlight"></span>
+					<span class="material-design-bar"></span>
+					<label id="purchaser-name-label" class="material-design-label">Prénom</label>
+				</div>
+				<div class="material-design-group">
+					<input id="purchaser-head-adress" class="material-design-input" type="text" required="">
+					<span class="material-design-highlight"></span>
+					<span class="material-design-bar"></span>
+					<label class="material-design-label">Adresse</label>
+				</div>
+				<div class="material-design-group">
+					<input id="purchaser-email" class="material-design-input" type="text" required="">
+					<span class="material-design-highlight"></span>
+					<span class="material-design-bar"></span>
+					<label class="material-design-label">Mail</label>
+				</div>
+				<div class="material-design-group">
+					<input id="purchaser-phone" class="material-design-input" type="text" required="">
+					<span class="material-design-highlight"></span>
+					<span class="material-design-bar"></span>
+					<label class="material-design-label">Tél</label>
+				</div>
+			</form>
+          </div> 
+    </div>
+    </main>
+	
+	<ul id="circle-menu">
+        <li class="burger-menu" id="burger-menu">
+            <div id="hamburger" class="">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div id="close">
+
+
+
+
+
+
+            </div>
+        </li>
+        <li class="so-menu inaccessible" id="so-menu"><img src="../../img/icone_treasury_white.png" alt="Suivi des opérations"></li>
+        <li class="gp-menu inaccessible" id="gp-menu"><img src="../../img/icone_grid_white.png" alt="Grille de prix"></li>
+        <li class="bp-menu inaccessible" id="bp-menu"><img src="../../img/icone_simulation_white.png" alt="Bilan promoteur"></li>
+        <li class="modif-menu inaccessible" id="modif-menu"><i class="fa fa-pencil"></i></li>
+        <li class="archivage-menu inaccessible" id="archivage-menu"><i class="fa fa-folder-open-o"></i></li>
+    </ul>
+
+    <p id="msg-burger" class="msg-hover">Créez / Sélectionnez<br>un projet</p>
+    <p id="msg-so" class="msg-hover">Suivi des opérations</p>
+    <p id="msg-gp" class="msg-hover">Grille de prix</p>
+    <p id="msg-bp" class="msg-hover">Bilan promoteur</p>
+    <p id="msg-modif" class="msg-hover">Modifier</p>
+    <p id="msg-archivage" class="msg-hover">Archiver</p>
+
+    <footer>
+        <p>Primpromo Digital Suite © 2018</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+    <script src="/vendors/swiper/swiper.jquery.min.js"></script>
+    <script src="/vendors/color-mixer/color_mixer.js"></script>
+    <script src="/vendors/jQuery.circleMenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.7.1/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay.min.js"></script>
+    <script src="/template/fr/i18n.js"></script>
+    <script type="text/javascript" src="/vendors/tooltipster/tooltipster.bundle.min.js"></script>
+    <script type="text/javascript" src="/vendors/jsPDF/jspdf.min.js"></script>
+    <script type="text/javascript" src="/vendors/jsPDF/html2canvas.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

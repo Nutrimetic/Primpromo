@@ -1,0 +1,16 @@
+------------------- BON DE COMMANDE CLIENT --------------------
+
+
+Mail : ${contact.mail}
+Tel : ${contact.phone}
+Sociéte : ${contact.company}
+Fonction : ${contact.job}
+
+Demande client : ${contact.firstName} ${contact.lastName} souhaiterait souscrire au service "${contact.product}" pour un effectif de ${contact.nbUsers} utilisateurs. 
+
+Commentaire client : 
+
+	"${contact.comment}"
+
+
+---------------------------------- *** ----------------------------------
